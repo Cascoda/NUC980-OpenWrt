@@ -4,4 +4,5 @@ src-git routing https://git.lede-project.org/feed/routing.git^af18086ba8de36e7fb
 src-git telephony https://git.lede-project.org/feed/telephony.git^31398a3759c99bdb2dca359b78e25c17b6dd434a
 src-git cascoda_sdk https://github.com/cascoda/cascoda-openwrt.git
 src-link openthread /home/alexandru/ot-br-posix/etc/openwrt
+src-git wpantund https://github.com/hosac/openwrt-feed-openthread.git
 
