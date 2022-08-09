@@ -41,14 +41,14 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&pinctrl_uart4_PD>;
 			pdma-enable = <1>;
-			status = "disabled";
+			status = "okay";
 		};
 
 		uart5: serial@b0075000 {
 			pinctrl-names = "default";
 			pinctrl-0 = <&pinctrl_uart5_PG>;
 			pdma-enable = <1>;
-			status = "disabled";
+			status = "okay";
 		};
 
 		uart6: serial@b0076000 {
