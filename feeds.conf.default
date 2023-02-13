@@ -3,3 +3,5 @@ src-git-full luci https://git.openwrt.org/project/luci.git^487e58a0a61f8d2396893
 src-git-full routing https://git.openwrt.org/feed/routing.git^8872359011eee64981804f7ed42d5d6b54add6d8
 src-git-full telephony https://git.openwrt.org/feed/telephony.git^1d2031a5c82816483c51bca15649e2957fbe2bc2
 src-link openthread /home/alexandru/ot-br-cascoda/etc/openwrt
+src-link knxiot /home/alexandru/knx-iot-point-api-config/etc/openwrt
+
