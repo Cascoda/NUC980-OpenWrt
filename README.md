@@ -9,7 +9,9 @@ For developers, OpenWrt is the framework to build an application without having
 to build a complete firmware around it; for users this means the ability for
 full customization, to use the device in ways never envisioned.
 
-Sunshine!
+This fork of OpenWRT is used as the build system for Cascoda's KNX-IoT Hub
+images. The changes to OpenWRT itself & associated are quite minimal - this
+is mostly for the convenience of building & releasing images
 
 ## Download
 
@@ -47,6 +49,40 @@ binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev
 make4.1+ perl python3.6+ rsync subversion unzip which
 ```
 
+### Cascoda-specific requirements
+
+To build the KNX-IoT hub firmware you will need access to several feeds. Please
+clone these repositories in the folders indicated by the paths within feeds.conf.default.
+- openthread - this is Cascoda's fork of the ot-br-posix repository. This is the
+  border router firmware and web gui, modified to work with Cascoda's Chili2D/2S 
+  dongles and with extra features and usability improvements. This repository
+  is open source.
+- knxiot - points to the proprietary shared object built on top of the KNX IoT stack.
+- knxiotlinker - Cascoda's proprietary KNX-IoT development tool which links points
+  together based on their functional blocks (smart linking).
+- knxiotproxy - Cascoda's propretary proxy from KNX-IoT to MQTT.
+
+Note: Cascoda's logo is displayed in the header through a modification to the bootstrap
+theme, in `luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm`. This is not
+yet in source control - sorry about that!
+
+Here is the patch for said modification:
+
+```patch
+diff --git a/themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm b/themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm
+index 37d18a2f07..05d788e1d2 100644
+--- a/themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm
++++ b/themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm
+@@ -58,6 +58,7 @@
+        <body class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><%- end %>" data-page="<%= pcdata(table.concat(disp.context.requestpath, "-")) %>">
+                <% if not blank_page then %>
+                <header>
++                       <a href="/"><img src="/luci-static/bootstrap/cascoda_logo.png" height=40 style="padding-right: 10px;"></a>
+                        <a class="brand" href="/"><%=striptags(boardinfo.hostname or "?")%></a>
+                        <ul class="nav" id="topmenu" style="display:none"></ul>
+                        <div id="indicators" class="pull-right"></div>
+```
+
 ### Quickstart
 
 1. Run `./scripts/feeds update -a` to obtain all the latest package definitions
@@ -61,6 +97,42 @@ make4.1+ perl python3.6+ rsync subversion unzip which
 4. Run `make` to build your firmware. This will download all sources, build the
    cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen
    applications for your target system.
+
+### Debugging Quickstart
+
+1. Build and install the gdbserver package into the hub.
+
+2. Enable debug symbols, found in General Build Options. Note that there is not enough
+   space to flash an entire image with debug symbols, even after stripping.
+
+3. Flash the package you want to debug using opkg
+
+4. Add a firewall exception for destination port 2335 if the GDB client will be coming
+   from the WAN interface.
+
+5. Attach the GDB server to the process you want to debug: `gdbserver 192.168.202.222:2335 --attach `pidof otbr-agent``
+
+6. Attach to the remote GDB from your openwrt folder: `./scripts/remote-gdb 192.168.202.222:2335 ./build_dir/target-mips_24kc_musl/openthread-br-1.0/.pkgdir/openthread-br/usr/sbin/otbr-agent`. It is important to use the binary in the package directory, as the
+   one in the root has been stripped of debug information.
+
+### Building for the Alfa Networks R36A
+
+The R36A is the base platform onto which Cascoda's KNX IoT Hub is built. We provide
+configuration files for building several types of images for this platform. These
+files contain all of the information OpenWRT needs to create an image for the R36A
+containing the border router firmware.
+
+To make use of these files:
+```bash
+cp .config-r36a-linker .config
+make
+```
+
+There are several config files available:
+- `.config-r36a-linker` - this is the default KNX-IoT Hub image upon which the releases
+are based. Contains the border router & the linker.
+- `.config-r36a` - vanilla border router, with no linker or other Cascoda proprietary software.
+- `.config-4g' - configuration for the R36A with a 4G backhaul connected via USB.
 
 ### Related Repositories
 
