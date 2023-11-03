@@ -92,7 +92,7 @@ index 37d18a2f07..05d788e1d2 100644
 4. Add a firewall exception for destination port 2335 if the GDB client will be coming
    from the WAN interface.
 
-5. Attach the GDB server to the process you want to debug: `gdbserver 192.168.202.222:2335 --attach \`pidof otbr-agent\` `
+5. Attach the GDB server to the process you want to debug: ``gdbserver 192.168.202.222:2335 --attach `pidof otbr-agent` ``
 
 6. Attach to the remote GDB from your openwrt folder: `./scripts/remote-gdb 192.168.202.222:2335 ./build_dir/target-mips_24kc_musl/openthread-br-1.0/.pkgdir/openthread-br/usr/sbin/otbr-agent`. It is important to use the binary in the package directory, as the
    one in the root has been stripped of debug information.
