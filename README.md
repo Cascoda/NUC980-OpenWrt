@@ -114,7 +114,7 @@ There are several config files available:
 - `.config-r36a-linker` - this is the default KNX-IoT Hub image upon which the releases
 are based. Contains the border router & the linker.
 - `.config-r36a` - vanilla border router, with no linker or other Cascoda proprietary software.
-- `.config-4g' - configuration for the R36A with a 4G backhaul connected via USB.
+- `.config-4g` - configuration for the R36A with a 4G backhaul connected via USB.
 
 ### Related Repositories
 
