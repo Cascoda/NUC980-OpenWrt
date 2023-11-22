@@ -52,7 +52,8 @@ make4.1+ perl python3.6+ rsync subversion unzip which
 ### Cascoda-specific requirements
 
 To build the KNX-IoT hub firmware you will need access to several feeds. Please
-clone these repositories in the folders indicated by the paths within feeds.conf.default.
+modify feeds.conf.default to point to the absolute path of the respective cloned
+repositories. Unfortunately relative paths do not work.
 - openthread - this is Cascoda's fork of the ot-br-posix repository. This is the
   border router firmware and web gui, modified to work with Cascoda's Chili2D/2S 
   dongles and with extra features and usability improvements. This repository
