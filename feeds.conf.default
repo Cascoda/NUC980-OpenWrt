@@ -5,5 +5,5 @@ src-git-full telephony https://git.openwrt.org/feed/telephony.git^1d2031a5c82816
 src-link openthread /home/alexandru/ot-br-cascoda/etc/openwrt
 src-link knxiot /home/alexandru/knx-iot-point-api-config/etc/openwrt
 src-link knxiotlinker /home/alexandru/knx-iot-br-linker/etc/openwrt
-src-link knxiotproxy /home/alexandru/knx-iot-mqtt-proxy/etc/openwrt
 src-link knxbrconfig /home/alexandru/knx_iot_br_config/etc/openwrt
+src-link knxiotproxy /home/alexandru/knx_iot_demos/proxy/etc/openwrt
