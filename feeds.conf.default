@@ -7,3 +7,4 @@ src-link knxiot /home/alexandru/knx-iot-point-api-config/etc/openwrt
 src-link knxiotlinker /home/alexandru/knx-iot-br-linker/etc/openwrt
 src-link knxbrconfig /home/alexandru/knx_iot_br_config/etc/openwrt
 src-link knxiotproxy /home/alexandru/knx_iot_demos/proxy/etc/openwrt
+src-link knxiotrouter /home/alexandru/knx_iot_router/etc/openwrt
