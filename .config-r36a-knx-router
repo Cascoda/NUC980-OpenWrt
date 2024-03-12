@@ -2015,7 +2015,7 @@ CONFIG_ZABBIX_POSTGRESQL=y
 # CONFIG_PACKAGE_diffutils is not set
 # CONFIG_PACKAGE_gcc is not set
 # CONFIG_PACKAGE_gdb is not set
-CONFIG_PACKAGE_gdbserver=m
+CONFIG_PACKAGE_gdbserver=y
 # CONFIG_PACKAGE_gitlab-runner is not set
 # CONFIG_PACKAGE_libtool-bin is not set
 # CONFIG_PACKAGE_lpc21isp is not set
