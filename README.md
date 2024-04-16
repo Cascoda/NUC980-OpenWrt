@@ -62,6 +62,8 @@ repositories. Unfortunately relative paths do not work.
 - knxiotlinker - Cascoda's proprietary KNX-IoT development tool which links points
   together based on their functional blocks (smart linking).
 - knxiotproxy - Cascoda's propretary proxy from KNX-IoT to MQTT.
+- knxiotubus - Cascoda's proprietary KNX-IoT backend and frontend to allow 
+  configuring virtual devices on the border router using a web gui.
 
 Note: Cascoda's logo is displayed in the header through a modification to the bootstrap
 theme, in `luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm`. This is not
