@@ -735,7 +735,7 @@ CONFIG_TARGET_INIT_CMD="/sbin/init"
 CONFIG_TARGET_INIT_SUPPRESS_STDERR=y
 CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="KNX-IoT-Router-OpenWrt"
-CONFIG_VERSION_NUMBER="0.4"
+CONFIG_VERSION_NUMBER="0.5"
 CONFIG_VERSION_CODE="22.03.0"
 CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/22.03.0"
 CONFIG_VERSION_HOME_URL=""
@@ -757,7 +757,8 @@ CONFIG_FEED_knxiot=y
 CONFIG_FEED_knxiotlinker=y
 CONFIG_FEED_knxbrconfig=y
 CONFIG_FEED_knxiotproxy=y
-# CONFIG_FEED_knxiotrouter is not set
+CONFIG_FEED_knxiotrouter=y
+CONFIG_FEED_knxiotubus=y
 
 #
 # Base system
@@ -4215,7 +4216,7 @@ CONFIG_PACKAGE_jansson=y
 # CONFIG_PACKAGE_knot-libs is not set
 # CONFIG_PACKAGE_knot-libzscanner is not set
 CONFIG_PACKAGE_knx-iot-br-config=m
-CONFIG_PACKAGE_knx-mqtt-proxy=y
+CONFIG_PACKAGE_knx-iot-mqtt=y
 # CONFIG_PACKAGE_libaio is not set
 # CONFIG_PACKAGE_libantlr3c is not set
 # CONFIG_PACKAGE_libao is not set
@@ -4240,7 +4241,7 @@ CONFIG_PACKAGE_libblobmsg-json=y
 # CONFIG_PACKAGE_libbsd is not set
 # CONFIG_PACKAGE_libcap is not set
 # CONFIG_PACKAGE_libcap-ng is not set
-# CONFIG_PACKAGE_libcares is not set
+CONFIG_PACKAGE_libcares=y
 # CONFIG_PACKAGE_libcbor is not set
 # CONFIG_PACKAGE_libcgroup is not set
 # CONFIG_PACKAGE_libcharset is not set
@@ -4340,6 +4341,7 @@ CONFIG_PACKAGE_libjson-c=y
 # CONFIG_PACKAGE_libkmod is not set
 CONFIG_PACKAGE_libknx-iot-api=y
 CONFIG_PACKAGE_libknx-iot-router-api=y
+CONFIG_PACKAGE_libknx-iot-ubus=y
 # CONFIG_PACKAGE_libksba is not set
 # CONFIG_PACKAGE_libldns is not set
 # CONFIG_PACKAGE_libleptonica is not set
@@ -4364,7 +4366,8 @@ CONFIG_PACKAGE_liblucihttp-lua=y
 CONFIG_PACKAGE_libmnl=y
 # CONFIG_PACKAGE_libmodbus is not set
 # CONFIG_PACKAGE_libmosquitto-nossl is not set
-# CONFIG_PACKAGE_libmosquitto-ssl is not set
+CONFIG_PACKAGE_libmosquitto-ssl=y
+# CONFIG_PACKAGE_libmosquittopp is not set
 # CONFIG_PACKAGE_libmount is not set
 # CONFIG_PACKAGE_libmpdclient is not set
 # CONFIG_PACKAGE_libmpeg2 is not set
@@ -5208,7 +5211,7 @@ CONFIG_PACKAGE_nftables-json=y
 CONFIG_PACKAGE_avahi-dbus-daemon=y
 # CONFIG_PACKAGE_avahi-dnsconfd is not set
 # CONFIG_PACKAGE_avahi-nodbus-daemon is not set
-CONFIG_PACKAGE_avahi-utils=m
+CONFIG_PACKAGE_avahi-utils=y
 # CONFIG_PACKAGE_bind-check is not set
 # CONFIG_PACKAGE_bind-client is not set
 # CONFIG_PACKAGE_bind-dig is not set
@@ -6159,7 +6162,7 @@ CONFIG_PACKAGE_uboot-envtools=y
 # CONFIG_PACKAGE_joe-extras is not set
 # CONFIG_PACKAGE_jupp is not set
 # CONFIG_PACKAGE_mg is not set
-# CONFIG_PACKAGE_nano is not set
+CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_nano-full is not set
 # CONFIG_PACKAGE_nano-plus is not set
 # CONFIG_PACKAGE_vim is not set
