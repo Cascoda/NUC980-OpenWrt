@@ -36,7 +36,7 @@ echo '=== All Checks Complete! Starting build! ==='
 make clean
 make -j12
 
-IMAGE_PATH=bin/targets/ath79/generic/*.bin
+IMAGE_PATH=bin/targets/ath79/generic/*upgrade.bin
 
 cp $IMAGE_PATH ~/mnt/internal/software/Cascoda/hub-images/
 
