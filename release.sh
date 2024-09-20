@@ -16,6 +16,11 @@ do
 	[ "$REPLY" = "y" ] || die "Repository not up to date"
 done
 
+echo 'Is /home/alexandru/knx-iot-code-gen up to date & on the latest master/main branch?'
+read -p 'y/n: ' -r REPLY < /dev/tty
+echo $REPLY
+[ "$REPLY" = "y" ] || die "Repository not up to date"
+
 echo '=== All repositories are up to date! Validating version number... ==='
 echo ''
 
@@ -31,6 +36,10 @@ read -p 'y/n: ' -r REPLY < /dev/tty
 
 
 echo '=== All Checks Complete! Starting build! ==='
+cd ../knx-iot-mqtt-proxy
+bash generate.sh ../knx-iot-code-gen
+cd ../openwrt
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 make clean
