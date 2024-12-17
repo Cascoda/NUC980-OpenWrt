@@ -10,3 +10,4 @@ src-link knxiotproxy /home/alexandru/knx-iot-mqtt-proxy/etc/openwrt
 src-link knxiotrouter /home/alexandru/knx_iot_router/etc/openwrt
 src-link knxiotubus /home/alexandru/knx_iot_ubus/etc/openwrt
 src-link knxcert /home/alexandru/codegen_output/cert-br/etc/openwrt
+src-link radiocert /home/alexandru/radio-cert-br-app/etc/openwrt
