@@ -763,7 +763,7 @@ CONFIG_FEED_routing=y
 CONFIG_FEED_telephony=y
 CONFIG_FEED_openthread=y
 CONFIG_FEED_knxiot=y
-CONFIG_FEED_knxiotlinker=y
+# CONFIG_FEED_knxiotlinker is not set
 CONFIG_FEED_knxbrconfig=y
 CONFIG_FEED_knxiotproxy=y
 CONFIG_FEED_knxiotrouter=y
@@ -5927,7 +5927,7 @@ CONFIG_PACKAGE_iw=y
 # CONFIG_PACKAGE_iw-full is not set
 # CONFIG_PACKAGE_jool-tools-netfilter is not set
 # CONFIG_PACKAGE_keepalived is not set
-CONFIG_PACKAGE_knx-iot-br-linker=y
+# CONFIG_PACKAGE_knx-iot-br-linker is not set
 # CONFIG_PACKAGE_knxd is not set
 # CONFIG_PACKAGE_kplex is not set
 # CONFIG_PACKAGE_krb5-client is not set
